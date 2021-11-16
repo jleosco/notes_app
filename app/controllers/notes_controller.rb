@@ -1,8 +1,13 @@
 class NotesController < ApplicationController
 
   def index
-    render component: "Notes"
+    notes = Note.all
+    render component: "Notes", props: {notes: notes}
   end
 
+
+def new
+    render component: "NotesNewForm"
+end
 
 end
